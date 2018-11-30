@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/post-vote/main",
+    "pages/post-like/main",
+    "pages/hot-vote/main",
+    "pages/heat-type/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+   "tabBar": {
+    "list": [
+      {
+      "pagePath": "pages/post-vote/main",
+      "text": "帖子投票"
+      }, 
+      {
+        "pagePath": "pages/post-like/main",
+        "text": "帖子喜欢"
+      },
+      {
+        "pagePath": "pages/hot-vote/main",
+        "text": "热议投票"
+      },
+      {
+        "pagePath": "pages/heat-type/main",
+        "text": "热议类别"
+      }
+    ]
+  }
+}
