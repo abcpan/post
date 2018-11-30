@@ -23,32 +23,30 @@
                            </div>
                     </div><!--内容区域-->
                     <div class="post__vote">
-                        <div class="vote-favor">
                             <img  
                                 class="favor-img" 
-                                src="../../assets/images/favor-default.png" 
+                                :src="favor" 
                                 mode="aspectFill" alt=""
                                 @click="doFavor"
                             />
-                            <div class="favor-status" v-if="favorNum">
-                                <p class="favor-status-word">{{favorNum}}人支持</p>
-                                <div class="favor-status-bar"></div>
+                            <div class="vote-status">
+                                <div class="word">
+                                    <div class="favor-status-word" v-if="favorNum">{{favorNum}}人支持</div>
+                                    <div v-else class="favor-status-word">支持</div>
+                                    <div class="against-status-word" v-if="againstNum">{{againstNum}}人反对</div>
+                                    <div v-else class="against-status-word">反对</div>
+                                </div>
+                                <div class="bar-block">
+                                    <div class="favor-status-bar" :style="favorstyle"></div>
+                                    <div class="against-status-bar" :style="againststyle"></div>
+                                </div>
                             </div>
-                            <p  v-else class="favor-status-word">支持</p>
-                        </div><!--投票区域-赞成区域-->
-                        <div class="vote-against">
-                            <div class="against-status" v-if="againstNum">
-                                <p class="against-status-word">{{againstNum}}人反对</p>
-                                <div class="against-status-bar"></div>
-                            </div>
-                            <p v-else class="against-status-word" >反对</p>
                             <img 
                                 class="against-img" 
-                                src="../../assets/images/against-default.png" 
+                                :src="against" 
                                 mode="aspectFill"
                                 @click="doAgainst"
                             />
-                        </div><!--投票区域-反对区域-->
                     </div><!--投票区域-->
                     <div class="post__from">
                         <span class="from-tip">来自</span>
@@ -64,16 +62,33 @@
         data() {
             return {
                 favorNum:0,
-                againstNum:0
+                againstNum:0,
+                favor:'../../assets/images/favor-default.png',
+                against:'../../assets/images/favor-default.png'
             }
         },
         methods:{
             doFavor() {
-                this.favorNum++
+                this.favorNum +=1
+                this.favor = '../../assets/images/favor.png',
+                this.against ='../../assets/images/against.png'
             },
             doAgainst() {
-                this.againstNum++
+                this.againstNum += 1
             }
+        },
+        computed:{
+            favorstyle() {
+                let width = (this.favorNum/(this.favorNum+this.againstNum))*562
+                return `width:${width}rpx`
+            },
+            againststyle(){
+                let width = (this.againstNum/(this.favorNum+this.againstNum))*562
+                return `width:${width}rpx`
+            }
+        },
+        updated(){
+            console.log(this.favorstyle)
         }
     }
 </script>
@@ -149,14 +164,21 @@
         display:flex;
         justify-content:space-between;
     }
-    .vote-favor,.vote-against{
-        display:flex;
-        align-items:center;
-    }
     .favor-img,.against-img{
         height:64rpx;
         width:64rpx;
         display:block;
+    }
+    .vote-status{
+        flex:1;
+    }
+    .word{
+        display:flex;
+        justify-content:space-between;
+    }
+    .bar-block{
+        display:flex;
+        justify-content:space-between;
     }
     .favor-status{}
     .favor-status-word{
@@ -167,10 +189,8 @@
     }
     .favor-status-bar{
         height:9rpx;
-        width:200rpx;
         background: #FB5E62;
     }
-    .against-status{}
     .against-status-word{
         margin-right:20rpx;
         font-size: 24rpx;
@@ -179,12 +199,11 @@
     }
     .against-status-bar{
         height:9rpx;
-        width:384rpx;
         background:#62C5C8;
     }
-    .against-status-bar,.favor-status-bar{
+    /* .against-status-bar,.favor-status-bar{
         margin-bottom:30rpx;
-    }
+    } */
     .post__from{
         margin-top:25rpx;
         font-size: 24rpx;
