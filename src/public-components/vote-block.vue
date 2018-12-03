@@ -68,7 +68,7 @@
 }
     .vote{
         @extend %between;
-        padding:20rpx 60rpx 20rpx 60rpx;
+        padding:20rpx 30rpx 20rpx 30rpx;
     &__img--favor,&__img--against{
         display:block;
         height:64rpx;

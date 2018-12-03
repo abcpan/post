@@ -1,7 +1,7 @@
 <template>
      <div class="heat-puretext">
          <postuser-head></postuser-head>
-            <div class="puretext-body">
+            <!-- <div class="puretext-body">
                 <div class="title-wrap">
                     <div 
                     class="puretext-title"
@@ -11,13 +11,15 @@
                         一天吃好几根棒棒糖，怎么办宝宝两岁半，就
                         喜欢吃糖，一出门就要买糖吃一天吃好几根棒
                         棒糖，怎么办？怎么办？来自星星的问候,深圳市南山区高新园福安科技大厦,中华人民共和国万岁
-                    </div><!--此处待处理-->
+                    </div>
                     <span class='read-all' @click="handleShowPart">{{showtext}}</span>
                 </div>
-            </div><!--热议身体-->
+            </div> -->
+            <post-content></post-content>
             <vote-block :favorNum=1 :againstNum=2></vote-block>
             <comment-list></comment-list>
             <from-block></from-block>
+            <location></location>
             <bottom-like></bottom-like>
         </div><!--热议卡片-->
 </template>
@@ -27,13 +29,17 @@ import FromBlock from '@/public-components/from-block'
 import VoteBlock from '@/public-components/vote-block'
 import BottomLike from '@/public-components/bottom-like'
 import CommentList from '@/public-components/comment-list'
+import PostContent from '@/public-components/post-content'
+import Location from '@/public-components/location'
     export default {
         components:{
            PostuserHead,
            FromBlock,
            VoteBlock,
            BottomLike,
-           CommentList
+           CommentList,
+           PostContent,
+           Location 
         },
         data() {
             return {

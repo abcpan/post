@@ -1,39 +1,33 @@
 <template>
     <div class="likelist">
-        <div class="post-line"></div><!--间隔线-->
-            <div class="post-like"><!--间隔线-->
-                <div class="like-wrap">
+            <div class="post-like">
                     <img  class="like-icon" src="/static/like-default.png" mode="aspectFill" alt="">
                     <img  class="user-icon" src="" alt="">
                     <img  class="user-icon" src="" alt="">
                     <img  class="user-icon" src="" alt="">
-                </div>
             </div>
-        <div class="post-line"></div><!--间隔线-->
         <div class="comment-info">
-                <div class="info-tip">最新评论<span class="comment-num">6</span></div>
-                <div class="info-sort">
-                    从旧到新
-                    <div class="arrow">
-                        <div class="triangle"></div>
-                        <div class="rect"></div>
-                    </div>
+            <div class="info-tip">最新评论<span class="comment-num">6</span></div>
+            <div class="info-sort">
+                从旧到新
+                <div class="arrow">
+                    <div class="triangle"></div>
+                    <div class="rect"></div>
                 </div>
             </div>
+        </div>
     </div>
 </template>
 <script>
     
 </script>
 <style lang="css" scoped>
-    .post-line{
-            width:730rpx;
-            height:2rpx;
-            margin:0 auto;
-            background: #DFDFDF;
-        }
-    .like-wrap{
-        padding:0 10rpx 0 10rpx;
+    .likelist{
+        padding:20rpx;
+    }
+    .post-like{
+        border-bottom:2rpx solid #ccc;
+        border-top:2rpx solid #ccc;
     }
     .like-icon,.user-icon{
         height:50rpx;

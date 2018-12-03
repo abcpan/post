@@ -1,8 +1,8 @@
 <template>
-     <div class="address">
-        <img class="address-icon" src="/static/position.png" mode="aspectFill" alt="">
-        <span class="address-tip">深圳市南山区科技园</span>
-        <span class="address-distance">一公里以内</span>
+     <div class="location">
+        <img class="location-icon" src="/static/position.png" mode="aspectFill" alt="">
+        <span class="location-tip">深圳市南山区科技园</span>
+        <span class="location-distance">一公里以内</span>
     </div>
 </template>
 <script>
@@ -11,17 +11,17 @@
     }
 </script>
 <style lang="css" scoped>
-    .address{
+    .location{
         font-size: 24rpx;
         color: #BBBBBB;
+        padding:0 20rpx;
     }
-    .address-icon{
+    .location-icon{
         width:20rpx;
         height:28rpx;
-        margin-right:48rpx;
-
+        margin-right:30rpx;
     }
-    .address-tip{
+    .location-tip{
         margin-right:30rpx;
     }
 </style>
