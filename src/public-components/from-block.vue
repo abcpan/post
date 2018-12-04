@@ -17,7 +17,10 @@
 <style lang="scss" scoped>
     .from{
         font-size:24rpx;
-       padding:25rpx 30rpx;
+        padding-left:20rpx;
+        margin:20rpx 0;
+        display:flex;
+        align-items:center;
         &__tip{
             color: #BBBBBB;
         }

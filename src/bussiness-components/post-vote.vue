@@ -42,14 +42,11 @@ import PostBody from  '@/public-components/post-body'
 }
     .post-vote{
         background:#fff;
-        position:relative;
         &::after{
             content:"";
             display:block;
             width:730rpx;
             border-top:2rpx solid #ccc;
-            position:absolute;
-            bottom:0;
             margin:20rpx 0 10rpx 10rpx;
         }
         &:last-child{
