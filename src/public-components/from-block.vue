@@ -1,14 +1,18 @@
 <template>
      <div class="from">
         <span class="from__tip">来自</span>
-        <span class="from__position">宝宝的问题里问</span>
+        <span class="from__position">{{postFrom}}</span>
     </div>
 </template>
 <script>
     
 </script>
 <script>
-    
+    export default {
+        props:{
+            postFrom:String
+        }
+    }
 </script>
 <style lang="scss" scoped>
     .from{

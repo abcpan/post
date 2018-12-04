@@ -1,13 +1,15 @@
 <template>
      <div class="location">
         <img class="location-icon" src="/static/position.png" mode="aspectFill" alt="">
-        <span class="location-tip">深圳市南山区科技园</span>
-        <span class="location-distance">一公里以内</span>
+        <span class="location-tip">{{location.coordinate}}ss</span>
+        <span class="location-distance">{{location.distance}}</span>
     </div>
 </template>
 <script>
     export default {
-
+        props:{
+            location:Object
+        }
     }
 </script>
 <style lang="css" scoped>

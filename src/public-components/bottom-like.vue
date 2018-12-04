@@ -26,23 +26,23 @@
 <script>
    export default {
        props:{
-
+           bottomLike:Object
        },
        data() {
            return {
-               likeNum:123456,
-               replyNum:123456,
+               likeNum:this.bottomLike.likeNum,
+               replyNum:this.bottomLike.replyNum,
                likeImgUrl:"/static/heart-default.png",
-               enable:true,
+               isLike:this.bottomLike.islike,
                isShow:false
            }
        },
        methods:{
            handleLike() {
-               if(this.enable){
+               if(!this.isLike){
                    this.likeImgUrl = "/static/heart.png"
                    this.likeNum+=1
-                   this.enable = false
+                   this.isLike = true
                    this.isShow = true
                    setTimeout(()=>{
                         this.isShow = false

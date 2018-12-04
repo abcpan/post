@@ -1,12 +1,19 @@
 <template>
     <div class="post-pictures">
-        <img  class="picture" src="" alt="">
-        <img  class="picture" src="" alt="">
-        <img  class="picture" src="" alt="">
+        <img  class="picture" v-for="(item,index) of selfPictures" :src="item" :key="index">
    </div>
 </template>
 <script>
-    
+    export default {
+        props:{
+            pictures:Array
+        },
+        data() {
+            return {
+                selfPictures:this.pictures.slice(0,3)
+            }
+        }
+    }
 </script>
 <style lang="css" scoped>
     .post-pictures{

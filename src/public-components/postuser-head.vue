@@ -1,10 +1,10 @@
 <template>
     <div class="user-heading">
-        <img class="user-heading__icon" src="/static/user.png" mode="aspectFill" alt="">
+        <img class="user-heading__icon" :src="userInfo.avatarUrl" mode="aspectFill" alt="">
         <div class="user-heading__desc">
-            <div class="username">匿名</div>
+            <div class="username">{{userInfo.username}}</div>
             <div class="usertime">
-                <span class="usrtime--current">刚刚</span>
+                <span class="usrtime--current">{{replyTime}}</span>
                 回复
             </div>
         </div>
@@ -19,7 +19,30 @@
     </div>
 </template>
 <script>
-    
+    export default {
+        props:{
+            userInfo:Object
+        },
+        data(){},
+        computed:{
+            replyTime() {
+                let replyTime = null
+                let time = this.userInfo.replyTime/60
+                let hours = Math.floor(time)
+                let mimutes = parseInt((time-hours)*60)
+                console.log(mimutes)
+                if(hours && mimutes) {
+                    return hours +'小时' + mimutes+ '分钟' + '前'
+                }else if(hours && !mimutes) {
+                    return hours +'小时'+ '前'
+                }else if(!hours && mimutes){
+                    return mimutes+ '分钟' + '前'
+                }else{
+                    return "刚刚"
+                }
+        }
+    }
+}
 </script>
 <style lang="scss" scoped>
     .user-heading{

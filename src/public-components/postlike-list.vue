@@ -1,10 +1,13 @@
 <template>
     <div class="likelist">
             <div class="post-like">
-                    <img  class="like-icon" src="/static/like-default.png" mode="aspectFill" alt="">
-                    <img  class="user-icon" src="" alt="">
-                    <img  class="user-icon" src="" alt="">
-                    <img  class="user-icon" src="" alt="">
+                    <img  
+                        class="like-icon" 
+                        :src="likeiconUrl" 
+                        mode="aspectFill"
+                        @click="handleLike"
+                    >
+                    <img  class="user-icon" v-for="(item,index) in wholike" :src="item" :key="index">
             </div>
         <div class="comment-info">
             <div class="info-tip">最新评论<span class="comment-num">6</span></div>
@@ -19,7 +22,22 @@
     </div>
 </template>
 <script>
-    
+    export default {
+        props:{
+            wholike:Array
+        },
+        data() {
+            return {
+                likeiconUrl:"/static/like-default.png"
+            }
+        },
+        methods:{
+            handleLike() {
+                this.likeiconUrl = "/static/like.png"
+                console.log("dddd")
+            }
+        }
+    }
 </script>
 <style lang="css" scoped>
     .likelist{

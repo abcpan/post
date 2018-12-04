@@ -8,9 +8,9 @@
         />
         <div class="vote__status">
             <div class="status__word">
-                <div class="status__word--favor" v-if="favorNum">{{favorNum}}人支持</div>
+                <div class="status__word--favor" v-if="favorNum">{{voteInfo.favorNum}}人支持</div>
                 <div v-else class="status__word--favor">支持</div>
-                <div class="status__word--against" v-if="againstNum">{{againstNum}}人反对</div>
+                <div class="status__word--against" v-if="againstNum">{{voteInfo.againstNum}}人反对</div>
                 <div v-else class="status__word--against">反对</div>
             </div>
             <div class="status__bar">
@@ -29,24 +29,34 @@
 <script>
     export default {
         props:{
-            favorNum:Number,
-            againstNum:Number
+            voteInfo:Object
         },
        data() {
             return {
                 favor:"/static/post-vote/favor-default.png",
-                against:"/static/post-vote/against-default.png"
+                against:"/static/post-vote/against-default.png",
+                favorNum:0,
+                againstNum:0
             }
         },
         methods:{
             doFavor() {
-                this.favorNum +=1
-                this.favor = '/static/post-vote/favor.png',
-                this.against ='/static/post-vote/against.png'
-                console.log(this.favorNum)
+                if(!this.voteInfo.isVote){   //判断是否有投票过 此处为如果this.voteInfo.isVote=false 就是没有投票
+                    this.favorNum = this.voteInfo.favorNum +=1
+                    this.againstNum = this.voteInfo.againstNum
+                    this.favor = '/static/post-vote/favor.png',
+                    this.against ='/static/post-vote/against.png'
+                    this.voteInfo.isVote = true  // 将其设置为已经投票
+                }
             },
             doAgainst() {
-                this.againstNum += 1
+                if(!this.voteInfo.isVote){   //判断是否有投票过 此处为如果this.voteInfo.isVote=false 就是没有投票
+                    this.againstNum = this.voteInfo.againstNum +=1
+                    this.favorNum = this.voteInfo.favorNum
+                    this.favor = '/static/post-vote/favor.png',
+                    this.against ='/static/post-vote/against.png'
+                    this.voteInfo.isVote = true  // 将其设置为已经投票
+                }
             }
         },
         computed:{
