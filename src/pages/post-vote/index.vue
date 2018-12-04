@@ -5,23 +5,19 @@
             <img class="title__icon" mode="aspectFill" src="../../assets/images/path.png" alt=""/>
         </div>
         <post-vote></post-vote>
-        <vote-result></vote-result>
         <comment-card></comment-card>
-        <comment-card></comment-card>
-        <input-card></input-card>
+        <bottom-input></bottom-input>
     </div>
 </template>
 <script>
-import VoteResult from './components/vote-result'
-import CommentCard from './components/comment-card'
-import PostVote from '@/public-components/post-vote/post-vote'
-import InputCard from './components/input-card'
+import PostVote from '@/bussiness-components/post-vote'
+import BottomInput from '@/public-components/bottom-input'
+import CommentCard from '@/bussiness-components/comment-card'
 export default {
     components:{
-        VoteResult,
         CommentCard,
         PostVote,
-        InputCard,
+        BottomInput
     },
     data() {
         return {

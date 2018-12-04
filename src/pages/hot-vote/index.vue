@@ -1,16 +1,13 @@
 <template>
     <div>
         <heat-vote></heat-vote>
-        <vote-result></vote-result>
     </div>
 </template>
 <script>
-import HeatVote from './components/heat-vote'
-import VoteResult from './components/vote-result'
+import HeatVote from '@/bussiness-components/heat-vote'
     export default {
         components:{
-            HeatVote,
-            VoteResult
+            HeatVote
         }
     }
 </script>

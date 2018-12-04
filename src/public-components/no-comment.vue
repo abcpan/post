@@ -1,6 +1,6 @@
 <template>
     <div class="nocomment-wrap">
-        <div class="nocomment-text">还木有评论呀~要不蜜来发一条？</div>
+        <div class="nocomment__text">还木有评论呀~要不蜜来发一条？</div>
     </div>
 </template>
 <script>
@@ -9,12 +9,12 @@
 <style lang="css" scoped>
     .nocomment-wrap{
         height:380rpx;
-        background:#eee;
+        background:#fff;
         display:flex;
         justify-content: center;
         align-items:center;
     }
-    .nocomment-text{
+    .nocomment__text{
         font-size: 32rpx;
         color: #BBBBBB;
     }

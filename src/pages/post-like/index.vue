@@ -2,21 +2,18 @@
     <div>
         <post-card></post-card>
         <no-comment></no-comment>
-        <input-card></input-card>
-        <comment-card></comment-card>
+        <bottom-input></bottom-input>
     </div>
 </template>
 <script>
-import PostCard from './components/post-card'
-import NoComment from './components/no-comment'
-import InputCard from './components/input-card'
-import CommentCard from './components/comment-card'
+import PostCard from '@/bussiness-components/post-card'
+import NoComment from '@/public-components/no-comment'
+import BottomInput from '@/public-components/bottom-input'
 export default {
     components:{
         PostCard,
         NoComment,
-        InputCard,
-        CommentCard
+        BottomInput,
     }
 }
 </script>
