@@ -29,14 +29,14 @@
         },
         computed:{
             imgItemWidth() {
-                if(this.single && this.imgUrls.length==1){ //传入一张图片 且确定为single 显示 为一宫格 否则 按照常规处理
+                if(this.single && this.imgUrls.length==1){ //传入一张图片 且确定为single显示 为一宫格 否则 按照常规处理
                     return 358
                 }else{  
                    return this.parrentWidth/this.palace -10 
                 }
                 
             },
-            //确定是几宫格 4 就是田字格 其他9 宫格
+            //确定是几宫格4就是田字格其他9宫格
             palace() {
                 return this.imgUrls.length==4?2:3;
             }

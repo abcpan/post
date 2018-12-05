@@ -28,6 +28,7 @@
             imgUrl(){
                 return this.imgUrls[this.index]
             },
+            // 确定是否单图显示,如果是单图显示  就为高度加100
             additon(){
                 if(this.single===true && this.imgUrls.length==1){
                     return 100

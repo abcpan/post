@@ -9,7 +9,7 @@
         <div class="reply__time">
             <div class="time-wrap">
                 <img  class="time__clock" src="/static/clock.png" alt="">
-                <span class="time__tip">{{replyTime}}回复</span>
+                <span class="time__tip">{{timeFormat}}回复</span>
             </div>
         </div>
     </div>
@@ -22,6 +22,21 @@ export default {
     },
     data() {
         return{}
+    },
+    computed:{
+        timeFormat(){
+            if(!this.replyTime){
+                return "刚刚"
+            }else{
+                let hours = Math.floor(this.replyTime/60)
+                let minutes = this.replyTime - hours*60
+                if(hours!=0){
+                    return hours+"小时" + minutes+ "分钟前"
+                }else{
+                    return minutes+ "分钟前"
+                }
+            } 
+        }
     },
     onShow() {
         console.log(this.replyWho,this.replyTime)
