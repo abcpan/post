@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my-reply/main",
     "pages/post-vote/main",
     "pages/post-like/main",
     "pages/hot-vote/main",
@@ -12,6 +13,7 @@
     "navigationBarTextStyle": "black"
   },
    "tabBar": {
+     "selectedColor":"#EA5647",
     "list": [
       {
       "pagePath": "pages/post-vote/main",
@@ -28,6 +30,10 @@
       {
         "pagePath": "pages/heat-type/main",
         "text": "热议类别"
+      },
+      {
+        "pagePath": "pages/my-reply/main",
+        "text": "我的回复"
       }
     ]
   }

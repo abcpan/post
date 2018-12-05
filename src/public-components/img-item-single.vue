@@ -2,7 +2,7 @@
     <div class="img-wraper">
         <img 
             class="imgItem" 
-            :style="{'width':imgItemWidth+'rpx','height':imgItemWidth + 'rpx'}"
+            :style="{'width':imgItemWidth+'rpx','height':imgItemWidth+additon+ 'rpx'}"
             :src="imgUrl" 
             @click.stop="previewImg"
         />
@@ -14,6 +14,7 @@
             index:Number,
             imgUrls:Array,
             imgItemWidth:Number,
+            single:Boolean
         },
         methods:{
             previewImg(){
@@ -26,6 +27,13 @@
         computed:{
             imgUrl(){
                 return this.imgUrls[this.index]
+            },
+            additon(){
+                if(this.single===true && this.imgUrls.length==1){
+                    return 100
+                }else{
+                    return 0
+                }
             }
         },
         mounted(){

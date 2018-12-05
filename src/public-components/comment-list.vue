@@ -33,7 +33,7 @@
                     this.list = this.comment.list
                     this.moretipchange= true
                 }else{
-                    this.list= this.comment.list.slice(0,this.comment.showCommentNum)
+                    this.list.length=3
                     this.moretipchange = false  // 切换回灭有提示有更多评论状态
                 }  
             }
