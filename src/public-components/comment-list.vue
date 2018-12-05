@@ -3,7 +3,10 @@
         <div class="comment-main">
             {{comment.content}}
         </div>
-        <div class="comment-wrap" :class="[comment.isHot?'comment-wrap--heat':'']">
+        <div 
+            class="comment-wrap"
+            :class="[comment.isHot?'comment-wrap--heat':'']"
+        >
             <ul class="comment-list"
             >
                 <li class="discuss-item" v-for="(item,index) in list" :key="index">
@@ -33,7 +36,7 @@
                     this.list = this.comment.list
                     this.moretipchange= true
                 }else{
-                    this.list.length=3
+                    this.list= this.comment.list.slice(0,this.comment.showCommentNum)
                     this.moretipchange = false  // 切换回灭有提示有更多评论状态
                 }  
             }
