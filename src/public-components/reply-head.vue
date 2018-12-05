@@ -61,7 +61,7 @@ export default {
         margin-left:20rpx;
     }
     .reply__time{
-        height:64rpx;
+        height:52rpx;
         font-size: 20rpx;
         display:flex;
         align-items:flex-end;

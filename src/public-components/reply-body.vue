@@ -33,9 +33,6 @@ export default {
             let single = true
             return Object.assign({},{imgUrls,parrentWidth,single})
         }
-    },
-    onShow(){
-        console.log(this.imgInfo)
     }
 }
 </script>
@@ -56,7 +53,7 @@ export default {
 .content__main{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp:2;
+    -webkit-line-clamp:4;
     overflow: hidden;
     text-overflow:ellipsis;
     font-size:32rpx;

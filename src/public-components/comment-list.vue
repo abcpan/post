@@ -13,7 +13,7 @@
                     <span class="name">{{item.name}}:</span>{{item.replyContent}}
                 </li>
             </ul>
-            <span class="comment-tip" @click="handleLookMore" v-if="more">{{moretip}}</span>
+            <span class="comment-tip" @click="handleLookMore" v-if="more">{{moreTip}}</span>
         </div>
    </div>
 </template>
@@ -26,24 +26,24 @@
             return {
                 list:this.comment.list.slice(0,this.comment.showCommentNum),
                 more:this.comment.list.length >this.comment.showCommentNum, //判断是否大于评论对象中规定显示的评论数量 是的话就显示 '查看更多的评论'
-                moretipchange:!this.comment.list.length >this.comment.showCommentNum  // 设置提示文字切换boolean 默认没有变更
+                canLookMore:this.comment.list.length >this.comment.showCommentNum  // 设置收起状态  此处为可以查看更多
             }
         },
         mounted() {},
         methods:{
             handleLookMore() {
-                if(!this.moretipchange){  //判断文字是否改变
+                if(this.canLookMore){  //判断文字是否改变
                     this.list = this.comment.list
-                    this.moretipchange= true
+                    this.canLookMore= false
                 }else{
-                    this.list= this.comment.list.slice(0,this.comment.showCommentNum)
-                    this.moretipchange = false  // 切换回灭有提示有更多评论状态
+                    this.list= this.comment.list.slice(0,this.comment.showCommentNum)  //收起评论
+                    this.canLookMore = true 
                 }  
             }
         },
         computed:{
-            moretip(){
-                if(!this.moretipchange) {
+           moreTip(){
+                if(this.canLookMore) {
                     let replyNum = this.comment.list.length -this.comment.showCommentNum;
                     return `查看另外${replyNum}条评论`
                 }else{
