@@ -45,5 +45,6 @@
         display:flex;
         flex-wrap:wrap;
         justify-content:flex-start;
+        margin-right:20rpx;
     }
 </style>

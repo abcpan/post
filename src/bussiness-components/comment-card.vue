@@ -1,7 +1,7 @@
 <template>
      <div class="comment-card">
          <commentuser-head :userInfo="post.userInfo" :likeandreply="post.bottomLike"></commentuser-head>
-         <comment-list v-if="post.comment" :comment="post.comment"></comment-list>
+         <comment-list :comment="post.comment"></comment-list>
     </div><!--评论卡片-->
 </template>
 <script>
@@ -33,8 +33,10 @@ export default{
                             {"name":"天线宝宝","replyContent":"泥煤,长得这么丑"},
                             {"name":"蟑螂恶霸","replyContent":"哼,我要和平星,我要干死卡布达"},
                             {"name":"蝎子来来","replyContent":"大哥,咱让喊上蜘蛛侦探在来和他么抢和平星"},
+                            {"name":"牛顿","replyContent":"妈的,这苹果砸得我真疼"},
                             {"name":"牛顿","replyContent":"妈的,这苹果砸得我真疼"}
-                        ]
+                        ],
+                        "showCommentNum":3
                     },
                     "location":{"coordinate":"西天雷音寺","distance":"1.2"},
                     "wholike":[
