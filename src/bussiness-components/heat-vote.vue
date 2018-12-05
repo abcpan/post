@@ -50,7 +50,8 @@ import Location from '@/public-components/location'
                             {"name":"蟑螂恶霸","replyContent":"哼,我要和平星,我要干死卡布达"},
                             {"name":"蝎子来来","replyContent":"大哥,咱让喊上蜘蛛侦探在来和他么抢和平星"},
                             {"name":"牛顿","replyContent":"妈的,这苹果砸得我真疼"}
-                        ]
+                        ],
+                        "showCommentNum":2
                     },
                     "location":{"coordinate":"西天雷音寺","distance":"1.2"},
                     "wholike":[
